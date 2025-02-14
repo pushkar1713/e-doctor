@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import { Stethoscope, Brain, Shield } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Stethoscope, Brain, Shield } from "lucide-react";
 
 export default function Home() {
   return (
@@ -14,9 +14,12 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h1 className="text-4xl font-bold mb-4">Your AI-Powered Health Assistant</h1>
+        <h1 className="text-4xl font-bold mb-4">
+          Your AI-Powered Health Assistant
+        </h1>
         <p className="text-xl mb-8 text-muted-foreground">
-          e-Doctor provides quick, reliable medical advice using AI and machine learning.
+          e-Doctor provides quick, reliable medical advice using AI and machine
+          learning.
         </p>
         <div className="flex justify-center space-x-4 mb-12">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -51,18 +54,26 @@ export default function Home() {
         />
       </motion.div>
     </main>
-  )
+  );
 }
 
-function FeatureCard({ icon, title, description }) {
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <motion.div whileHover={{ scale: 1.05 }} className="p-6 bg-card rounded-lg shadow-lg">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="p-6 bg-card rounded-lg shadow-lg"
+    >
       <div className="flex flex-col items-center text-center">
         {icon}
         <h2 className="mt-4 text-xl font-semibold">{title}</h2>
         <p className="mt-2 text-muted-foreground">{description}</p>
       </div>
     </motion.div>
-  )
+  );
 }
-
